@@ -1,0 +1,1 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([[2],{"i6+/":function(e,n,a){"use strict";a.r(n);var t=a("q1tI"),i=a.n(t);n["default"]=(()=>{return i.a.createElement("div",null,"I am a customized 404 page")})}}]);
