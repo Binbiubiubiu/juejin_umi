@@ -30,9 +30,9 @@ const Header: React.FC = function(props: any) {
 };
 
 type NavLinkItem = { title: string; url: string };
-interface NavListProps {
+type NavListProps = {
   currentRoute: string;
-}
+};
 const NavList: React.FC<NavListProps> = function(props) {
   const navLinks: NavLinkItem[] = [
     { title: '首页', url: '/' },
@@ -47,12 +47,17 @@ const NavList: React.FC<NavListProps> = function(props) {
   return (
     <nav className={style['main-nav']}>
       <ul>
-        {navLinks.map(item => (
-          <li className={style['nav-item']} key={item.url}>
-            <NavLink to={item.url}>
-              <span className={clsx({ [style['active']]: item.url === currentRoute })}>
-                {item.title}
-              </span>
+        {navLinks.map((item, i) => (
+          <li className={`${style['nav-item']}`} key={item.url}>
+            <NavLink
+              to={item.url}
+              exact={true}
+              activeClassName="link-active"
+              isActive={(match, location) =>
+                i === 0 ? !!match || /welcome/.test(location.pathname) : !!match
+              }
+            >
+              {item.title}
             </NavLink>
           </li>
         ))}

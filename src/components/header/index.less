@@ -7,6 +7,8 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 100;
+  border-bottom: 1px solid #f1f1f1;
 }
 
 .container {
@@ -32,8 +34,6 @@
   line-height: @header-height;
 
   a {
-    color: #333;
-
     &::after {
       content: '';
       position: absolute;
@@ -42,11 +42,11 @@
       left: 0;
       right: 0;
     }
-
-    .active {
-      color: #007fff;
-    }
   }
+}
+
+.header-active {
+  color: #007fff;
 }
 
 .search-wrapper {

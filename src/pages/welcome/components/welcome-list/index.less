@@ -1,0 +1,138 @@
+/**
+   List
+**/
+.list {
+  &-header {
+    padding: 1.3rem 1rem;
+    border-bottom: 1px solid hsla(0, 0%, 59.2%, 0.1);
+  }
+
+  &-nav {
+    &-item {
+      display: inline;
+      border-right: 1px solid hsla(0, 0%, 59.2%, 0.2);
+
+      &:last-child {
+        border-right: none;
+      }
+
+      a {
+        font-size: 1.2rem;
+        padding: 0 1.1em;
+      }
+    }
+  }
+
+  &-item {
+    padding: 1.5rem 2rem;
+  }
+}
+
+/**
+     card
+  **/
+
+.list-item {
+  border-bottom: 1px solid rgba(178, 186, 194, 0.15);
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f7f8fa;
+  }
+
+  &-container {
+    position: relative;
+  }
+
+  &-main-row {
+    margin: 0.5rem 0 1rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: #2e3135;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:visited {
+      color: #909090;
+    }
+  }
+
+  &-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 5rem;
+    height: 5rem;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+}
+
+.top-list {
+  li {
+    display: inline;
+    font-size: 1rem;
+    color: #b2bac2;
+
+    &:nth-child(n + 2)::before {
+      content: '·';
+      padding: 0 0.5em;
+    }
+
+    &:first-child {
+      font-weight: 500;
+      color: #b71ed7;
+    }
+  }
+}
+
+.button-list {
+  li {
+    display: inline-block;
+    border: 1px solid #edeeef;
+    height: 2.4rem;
+    line-height: 1.9rem;
+    vertical-align: middle;
+
+    &:nth-of-type(n + 2) {
+      position: relative;
+      left: -1px;
+    }
+  }
+
+  .button-item {
+    display: inline-block;
+    height: 100%;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0 1em;
+    color: #b2bac2;
+    cursor: pointer;
+
+    &-active {
+      color: @success-color;
+    }
+
+    &:hover {
+      background-color: #f7f8fa;
+    }
+  }
+
+  img {
+    vertical-align: middle;
+  }
+
+  span {
+    vertical-align: middle;
+    margin-right: 0.2em;
+  }
+}

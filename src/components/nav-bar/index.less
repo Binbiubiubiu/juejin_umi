@@ -1,0 +1,42 @@
+@navbar-height: 3.833rem;
+
+.nav-wrapper {
+  position: fixed;
+  top: 5rem;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: @navbar-height;
+  background-color: #fff;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.nav-container {
+  width: 100%;
+  max-width: 1024px;
+  height: 100%;
+  margin: 0 auto;
+
+  :first-child {
+    padding-left: 0;
+  }
+
+  :last-child {
+    padding-right: 0;
+  }
+
+  li {
+    display: inline-block;
+    height: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    cursor: pointer;
+  }
+
+  a {
+    display: inline-block;
+    height: 100%;
+    font-size: 1.2rem;
+    line-height: @navbar-height;
+  }
+}
