@@ -9,10 +9,10 @@ import { navList } from '@/services/article';
 const Page = () => {
   return (
     <>
-      <NavBar items={navList}></NavBar>
+      <NavBar items={navList} />
       <div className={styles['welcome_body']}>
-        <WelcomeList></WelcomeList>
-        <aside></aside>
+        <WelcomeList />
+        <aside />
       </div>
     </>
   );

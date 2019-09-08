@@ -122,7 +122,7 @@ const UserLogin: React.FC = function(props) {
   return false ? (
     <>
       <a href="/" className={style['wrapper-space-between']}>
-        <i className={clsx('iconfont', 'icon-tixing-tianchong', style['message-icon'])}></i>
+        <i className={clsx('iconfont', 'icon-tixing-tianchong', style['message-icon'])} />
       </a>
       <a href="/" className={style['wrapper-space-between']}>
         <img

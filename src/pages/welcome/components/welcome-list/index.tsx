@@ -70,7 +70,7 @@ const List = (props: any) => {
         </header>
         <ul>
           {list.map((item: any) => (
-            <ListItem data={item} key={item.id}></ListItem>
+            <ListItem data={item} key={item.id} />
           ))}
         </ul>
       </>
@@ -131,20 +131,20 @@ const ListItem = (props: any) => {
               onClick={handleClickZan}
               className={clsx(styles['button-item'], { [styles['button-item-active']]: isZan })}
             >
-              <img src={isZan ? ZanActiveIcon : ZanIcon} alt="zan-icon"></img>
+              <img src={isZan ? ZanActiveIcon : ZanIcon} alt="zan-icon" />
               {data.likeCount ? <span>{data.likeCount}</span> : ''}
             </div>
           </li>
           <li>
             <a href="/" className={styles['button-item']}>
-              <img src={CommentIcon} alt="comment-icon"></img>
+              <img src={CommentIcon} alt="comment-icon" />
               {data.commentsCount ? <span>{data.commentsCount}</span> : ''}
             </a>
           </li>
         </ul>
 
         {data.screenshot ? (
-          <img src={data.screenshot} className={styles['list-item-img']} alt="list-item-img"></img>
+          <img src={data.screenshot} className={styles['list-item-img']} alt="list-item-img" />
         ) : null}
       </div>
     </li>

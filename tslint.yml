@@ -10,3 +10,6 @@ rules:
   no-construct: true
   no-debugger: true
   no-reference: true
+  jsx-no-multiline-js: false
+  disable-next-line: false
+  jsx-no-lambda: false

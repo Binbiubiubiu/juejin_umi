@@ -5,7 +5,7 @@ import Header from '../components/header';
 const BasicLayout: React.FC = props => {
   return (
     <div className={style['layout-body']}>
-      <Header></Header>
+      <Header />
       <main className={style['main-container']}>{props.children}</main>
     </div>
   );
