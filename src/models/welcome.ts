@@ -30,7 +30,6 @@ export default {
     after: '',
   },
   reducers: {
-    //@ts-ignore
     [WelcomeEffect.UPDATE_LIST](state, { payload: { data, ...a } }) {
       return {
         ...state,
@@ -38,8 +37,7 @@ export default {
         list: state.list.concat(data),
       };
     },
-    //@ts-ignore
-    [WelcomeEffect.CLEAR_LIST](state) {
+    [WelcomeEffect.CLEAR_LIST](state: any) {
       return {
         ...state,
         list: [],
@@ -48,15 +46,12 @@ export default {
     },
   },
   effects: {
-    //@ts-ignore
     *[WelcomeEffect.FETCH_ARTICLES_EFFECT]({ payload: { isRefresh } }, { call, put, select }) {
       if (isRefresh) yield put({ type: [WelcomeEffect.CLEAR_LIST] });
 
-      const lastFetchOptions = yield select((state: any) => {
+      const lastFetchOptions = yield select(state => {
         const { pathname, query } = state.router.location;
-        const sort = query.sort
-          ? (query.sort as string).toUpperCase()
-          : ArticlesOrder.POPULAR.toUpperCase();
+        const sort = query.sort ? query.sort.toUpperCase() : ArticlesOrder.POPULAR.toUpperCase();
         const category = pathname.split('/')[2] || -1;
 
         return {
@@ -76,7 +71,7 @@ export default {
       yield put({
         type: [WelcomeEffect.UPDATE_LIST],
         payload: {
-          data: edges.map((item: any) => item.node),
+          data: edges.map(item => item.node),
           hasNextPage,
           after,
         },

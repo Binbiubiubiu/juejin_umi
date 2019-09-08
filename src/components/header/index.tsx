@@ -17,13 +17,13 @@ const Header: React.FC = function(props: any) {
         <a href="/">
           <img src={logo} className="logo" alt="logo" />
         </a>
-        <NavList currentRoute={location.pathname}></NavList>
+        <NavList currentRoute={location.pathname} />
 
-        <SearchInput></SearchInput>
+        <SearchInput />
         <div className={style['wrapper-space-between']}>
-          <ActionBtn></ActionBtn>
+          <ActionBtn />
         </div>
-        <UserLogin></UserLogin>
+        <UserLogin />
       </div>
     </header>
   );

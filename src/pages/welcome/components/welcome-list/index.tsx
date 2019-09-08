@@ -78,18 +78,15 @@ const List = (props: any) => {
   );
 };
 
-export default withRouter(
-  // @ts-ignore
-  connect(
-    ({ welcome }: any) => ({ ...welcome }),
-    dispatch => {
-      return {
-        loadMore: () => dispatch(LIST_LOADMORE()),
-        refresh: () => dispatch(LIST_REFRESH()),
-      };
-    },
-  )(List),
-);
+export default connect(
+  ({ welcome }: any) => ({ ...welcome }),
+  dispatch => {
+    return {
+      loadMore: () => dispatch(LIST_LOADMORE()),
+      refresh: () => dispatch(LIST_REFRESH()),
+    };
+  },
+)(withRouter(List));
 
 const ListItem = (props: any) => {
   const [isZan, setisZan] = useState(false);
@@ -99,7 +96,7 @@ const ListItem = (props: any) => {
   };
 
   const handleRouterChange = (e: MouseEvent, url: string) => {
-    if ((e.target.nodeName as string).toLowerCase() === 'a') return;
+    if (((e.target as Element).nodeName as string).toLowerCase() === 'a') return;
     router.push(url);
   };
 

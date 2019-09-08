@@ -55,7 +55,7 @@ export function fetch(options: ArticlesFetchOptions) {
       operationName: '',
       query: '',
       variables: { first: FETCH_PAGE_SIZE, ...options },
-      extensions: { query: { id: '653b587c5c7c8a00ddf67fc66f989d42' } },
+      extensions: { query: { id: '21207e9ddb1de777adeaca7a2fb38030' } },
     }),
   });
 }
